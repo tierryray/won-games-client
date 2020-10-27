@@ -1,5 +1,3 @@
-import 'jest-styled-components'
-
 import { render, screen } from '@testing-library/react'
 
 import MediaMatch from '.'
