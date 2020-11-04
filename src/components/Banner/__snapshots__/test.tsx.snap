@@ -22,7 +22,7 @@ exports[`<Banner /> should render correctly 1`] = `
 
 .c3 {
   font-size: 1.8rem;
-  font-weight: 500;
+  font-weight: 600;
   color: #FAFAFA;
 }
 
@@ -35,7 +35,7 @@ exports[`<Banner /> should render correctly 1`] = `
 
 .c4 strong {
   color: #F231A5;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .c5 {
