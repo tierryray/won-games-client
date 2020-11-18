@@ -5,19 +5,19 @@ import { renderWithTheme } from 'utils/tests/helpers'
 import { screen } from '@testing-library/react'
 
 describe('<Heading />', () => {
-  it('should render a black heading by default', () => {
+  it('should render a white heading by default', () => {
     renderWithTheme(<Heading>Won Games</Heading>)
 
     expect(screen.getByRole('heading', { name: /won games/i })).toHaveStyle({
-      color: '#030517'
+      color: '#FAFAFA'
     })
   })
 
-  it('should render a white heading when color is passed', () => {
-    renderWithTheme(<Heading color="white">Won Games</Heading>)
+  it('should render a black heading when color is passed', () => {
+    renderWithTheme(<Heading color="black">Won Games</Heading>)
 
     expect(screen.getByRole('heading', { name: /won games/i })).toHaveStyle({
-      color: '#FAFAFA'
+      color: '#030517'
     })
   })
 

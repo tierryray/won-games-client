@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components'
-
 import media from 'styled-media-query'
 
 export const Wrapper = styled.menu`
@@ -34,17 +33,17 @@ export const MenuGroup = styled.div`
     flex-grow: 1;
     justify-content: flex-end;
     align-items: center;
-
     > div {
       margin-left: ${theme.spacings.xsmall};
     }
   `}
 `
+
 export const MenuNav = styled.div`
   ${({ theme }) => css`
     ${media.greaterThan('medium')`
-      margin-left: ${theme.spacings.small};
-    `}
+			margin-left: ${theme.spacings.small};
+		`}
   `}
 `
 
@@ -56,7 +55,6 @@ export const MenuLink = styled.a`
     margin: 0.3rem ${theme.spacings.small} 0;
     text-decoration: none;
     text-align: center;
-
     &:hover {
       &::after {
         content: '';
@@ -65,16 +63,15 @@ export const MenuLink = styled.a`
         height: 0.3rem;
         background-color: ${theme.colors.primary};
         animation: hoverAnimation 0.2s forwards;
-
-        @keyframes hoverAnimation {
-          from {
-            width: 0;
-            left: 50%;
-          }
-          to {
-            width: 100%;
-            left: 0;
-          }
+      }
+      @keyframes hoverAnimation {
+        from {
+          width: 0;
+          left: 50%;
+        }
+        to {
+          width: 100%;
+          left: 0;
         }
       }
     }
@@ -91,7 +88,8 @@ export const MenuFull = styled.nav<MenuFullProps>`
     flex-direction: column;
     justify-content: space-between;
     background: ${theme.colors.white};
-    position: absolute;
+    position: fixed;
+    z-index: ${theme.layers.menu};
     top: 0;
     bottom: 0;
     left: 0;
@@ -101,7 +99,6 @@ export const MenuFull = styled.nav<MenuFullProps>`
     transition: opacity 0.3s ease-in-out;
     opacity: ${isOpen ? 1 : 0};
     pointer-events: ${isOpen ? 'all' : 'none'};
-
     > svg {
       position: absolute;
       top: 0;
@@ -111,7 +108,6 @@ export const MenuFull = styled.nav<MenuFullProps>`
       width: 2.4rem;
       height: 2.4rem;
     }
-
     ${MenuNav} {
       display: flex;
       align-items: center;
@@ -119,7 +115,6 @@ export const MenuFull = styled.nav<MenuFullProps>`
       flex: 1;
       flex-direction: column;
     }
-
     ${MenuLink} {
       color: ${theme.colors.black};
       font-weight: ${theme.font.bold};
@@ -128,7 +123,6 @@ export const MenuFull = styled.nav<MenuFullProps>`
       transform: ${isOpen ? 'translateY(0)' : 'translateY(3rem)'};
       transition: transform 0.3s ease-in-out;
     }
-
     ${RegisterBox} {
       transform: ${isOpen ? 'translateY(0)' : 'translateY(3rem)'};
       transition: transform 0.3s ease-in-out;
@@ -142,7 +136,6 @@ export const RegisterBox = styled.div`
     flex-direction: column;
     align-items: center;
     padding: 0 ${theme.spacings.xlarge} ${theme.spacings.xlarge};
-
     > span {
       display: block;
       margin: ${theme.spacings.xxsmall} 0;
