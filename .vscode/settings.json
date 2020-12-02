@@ -9,5 +9,8 @@
     "xsmall",
     "xxlarge",
     "xxsmall"
+  ],
+  "conventionalCommits.scopes": [
+    "auth"
   ]
 }
