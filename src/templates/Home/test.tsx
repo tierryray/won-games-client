@@ -1,12 +1,11 @@
 import 'matchMediaMock'
-import { screen } from '@testing-library/react'
-import { renderWithTheme } from 'utils/tests/helpers'
 
+import Home from '.'
 import bannerMock from 'components/BannerSlider/mock'
 import gamesMock from 'components/GameCardSlider/mock'
 import highlightMock from 'components/Highlight/mock'
-
-import Home from '.'
+import { renderWithTheme } from 'utils/tests/helpers'
+import { screen } from '@testing-library/react'
 
 const props = {
   banners: bannerMock,
@@ -14,41 +13,35 @@ const props = {
   mostPopularHighlight: highlightMock,
   mostPopularGames: [gamesMock[0]],
   upcommingGames: [gamesMock[0]],
-  upcommingHighligth: highlightMock,
+  upcommingHighlight: highlightMock,
   upcommingMoreGames: [gamesMock[0]],
   freeGames: [gamesMock[0]],
-  freeHighligth: highlightMock
+  freeHighlight: highlightMock
 }
 
+jest.mock('components/Showcase', () => {
+  return {
+    __esModule: true,
+    default: function Mock() {
+      return <div data-testid="Mock Showcase"></div>
+    }
+  }
+})
+
+jest.mock('components/BannerSlider', () => {
+  return {
+    __esModule: true,
+    default: function Mock() {
+      return <div data-testid="Mock Banner Slider"></div>
+    }
+  }
+})
+
 describe('<Home />', () => {
-  it('should render menu and footer', () => {
+  it('should render banner and showcases', () => {
     renderWithTheme(<Home {...props} />)
 
-    //  Menu
-    expect(screen.getByLabelText(/open menu/i)).toBeInTheDocument()
-    //  Footer
-    expect(
-      screen.getByRole('heading', { name: /follow us/i })
-    ).toBeInTheDocument()
-    //  Logos
-    expect(screen.getAllByRole('img', { name: /won games/i })).toHaveLength(2)
-
-    expect(screen.getByRole('heading', { name: /news/i })).toBeInTheDocument()
-    expect(
-      screen.getByRole('heading', { name: /most popular/i })
-    ).toBeInTheDocument()
-    expect(
-      screen.getByRole('heading', { name: /upcomming/i })
-    ).toBeInTheDocument()
-    expect(
-      screen.getByRole('heading', { name: /free games/i })
-    ).toBeInTheDocument()
-
-    // banner
-    expect(screen.getAllByText(/defy death 1/i)).toHaveLength(1)
-    // card game ( 5 sections com 1 cards cada = 5x1 = 5)
-    expect(screen.getAllByText(/population zero/i)).toHaveLength(5)
-    // highlight
-    expect(screen.getAllByText(/read dead is back!/i)).toHaveLength(3)
+    expect(screen.getByTestId('Mock Banner Slider')).toBeInTheDocument()
+    expect(screen.getAllByTestId('Mock Showcase')).toHaveLength(5)
   })
 })

@@ -1,4 +1,5 @@
-import styled, { css, DefaultTheme } from 'styled-components'
+import styled, { DefaultTheme, css } from 'styled-components'
+
 import { TextFieldProps } from '.'
 
 type IconPositionProps = Pick<TextFieldProps, 'iconPosition'>
@@ -6,7 +7,7 @@ type IconPositionProps = Pick<TextFieldProps, 'iconPosition'>
 type WrapperProps = Pick<TextFieldProps, 'disabled'> & { error?: boolean }
 
 export const InputWrapper = styled.div`
-  ${({ theme, disabled }) => css`
+  ${({ theme }) => css`
     display: flex;
     background: ${theme.colors.lightGray};
     border-radius: 0.2rem;

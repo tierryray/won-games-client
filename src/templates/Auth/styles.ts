@@ -1,7 +1,8 @@
-import styled, { css } from 'styled-components'
-
 import * as HeadingStyles from 'components/Heading/styles'
 import * as LogoStyles from 'components/Logo/styles'
+
+import styled, { css } from 'styled-components'
+
 import media from 'styled-media-query'
 
 export const Wrapper = styled.main`
@@ -49,6 +50,11 @@ export const BannerContent = styled.div`
     position: relative;
     z-index: ${theme.layers.base};
     height: 100%;
+
+    a {
+      width: fit-content;
+      height: fit-content;
+    }
   `}
 `
 
