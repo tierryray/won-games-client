@@ -3,7 +3,7 @@ import styled, { DefaultTheme, css } from 'styled-components'
 
 import media from 'styled-media-query'
 
-const wrapperModifiers = {
+export const wrapperModifiers = {
   small: (theme: DefaultTheme) => css`
     font-size: ${theme.font.sizes.medium};
     &::after {
