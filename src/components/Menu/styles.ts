@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+
 import media from 'styled-media-query'
 
 export const Wrapper = styled.menu`
@@ -7,6 +8,7 @@ export const Wrapper = styled.menu`
     align-items: center;
     padding: ${theme.spacings.small} 0;
     position: relative;
+    z-index: ${theme.layers.menu};
   `}
 `
 
