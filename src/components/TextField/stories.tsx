@@ -1,16 +1,15 @@
-import { Story, Meta } from '@storybook/react/types-6-0'
-import { Email } from '@styled-icons/material-outlined'
-
+import { Meta, Story } from '@storybook/react/types-6-0'
 import TextField, { TextFieldProps } from '.'
+
+import { Email } from '@styled-icons/material-outlined'
 
 export default {
   title: 'Form/TextField',
   component: TextField,
   args: {
     label: 'E-mail',
-    labelFor: 'Email',
+    name: 'email',
     icon: <Email />,
-    id: 'Email',
     initialValue: '',
     placeholder: 'john.cage@gmail.com'
   },

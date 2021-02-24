@@ -1,6 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<TextField /> should render with error 1`] = `
+.c7 {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
 .c4 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -70,12 +76,6 @@ exports[`<TextField /> should render with error 1`] = `
   margin-top: 0.8rem;
 }
 
-.c7 {
-  display: inline-block;
-  vertical-align: middle;
-  overflow: hidden;
-}
-
 <div
   class="c0"
 >
@@ -111,6 +111,8 @@ exports[`<TextField /> should render with error 1`] = `
     </div>
     <input
       class="c8"
+      id="TextField"
+      name="TextField"
       type="text"
       value=""
     />
@@ -121,4 +123,4 @@ exports[`<TextField /> should render with error 1`] = `
     Error message
   </p>
 </div>
-`;
+`
